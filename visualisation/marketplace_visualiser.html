@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Marketplace Interaction Visualizer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/visualisation/marketplace_visualiser.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Data Marketplace Interaction Visualizer</h1>
+
+        <!-- Simulation Controls -->
+        <div class="card grid-col-span-2 flex flex-col items-center gap-4">
+            <h2>Simulation Controls</h2>
+            <div class="flex gap-4">
+                <button id="startButton" class="btn btn-primary">Start Simulation</button>
+                <button id="nextStepButton" class="btn btn-primary" disabled>Next Step</button>
+                <button id="resetButton" class="btn btn-secondary">Reset Simulation</button>
+            </div>
+            <div id="simulationStatus" class="status-message status-info w-full max-w-md">
+                Click "Start Simulation" to begin.
+            </div>
+        </div>
+
+        <!-- Accounts Section -->
+        <div class="card">
+            <h2>Accounts (Balances in MTK)</h2>
+            <div id="accountsDisplay" class="account-card">
+                <!-- Account balances will be rendered here by JS -->
+            </div>
+        </div>
+
+        <!-- Log Area -->
+        <div class="card">
+            <h2>Simulation Log</h2>
+            <div id="logArea" class="log-area">
+                <p>Simulation log will appear here.</p>
+            </div>
+        </div>
+
+        <!-- DataReview State Section -->
+        <div class="card grid-col-span-2">
+            <h2>DataReview Contract State</h2>
+            <h3>Datasets</h3>
+            <div id="datasetsDisplay">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Owner</th>
+                            <th>Stake</th>
+                            <th>Reviewed?</th>
+                            <th>Reviews</th>
+                            <th>Avg Score</th>
+                            <th>Stake Released?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Datasets will be rendered here by JS -->
+                    </tbody>
+                </table>
+                <p id="noDatasetsMessage" class="text-gray-600 mt-4 text-center hidden">No datasets submitted yet.</p>
+            </div>
+
+            <h3>Reviewers</h3>
+            <div id="reviewersDisplay">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Address</th>
+                            <th>Reputation</th>
+                            <th>Stake</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Reviewers will be rendered here by JS -->
+                    </tbody>
+                </table>
+                <p id="noReviewersMessage" class="text-gray-600 mt-4 text-center hidden">No reviewers staked yet.</p>
+            </div>
+        </div>
+
+        <!-- DataBundle State Section -->
+        <div class="card grid-col-span-2">
+            <h2>DataBundle Contract State</h2>
+            <h3>Bundles</h3>
+            <div id="bundlesDisplay">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Price (MTK)</th>
+                            <th>Total Weight</th>
+                            <th>NFT Owner</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Bundles will be rendered here by JS -->
+                    </tbody>
+                </table>
+                <p id="noBundlesMessage" class="text-gray-600 mt-4 text-center hidden">No bundles created yet.</p>
+            </div>
+
+            <h3>Bundle Datasets & Owners</h3>
+            <div id="bundleDatasetsDisplay">
+                <p class="text-gray-600 mt-4 text-center">Select a bundle above to see its constituent datasets.</p>
+                <!-- Detailed bundle datasets will be rendered here by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="/visualisation/marketplace_visualiser.js"></script>
+</body>
+</html>
