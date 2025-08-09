@@ -40,14 +40,14 @@ blockchain_ai_marketplace/
 ├── scripts/
 │ ├── deploy.py
 │ └── interact.py
-├── ui/
-│ ├── public/
-│ │ └── index.html
-│ └── src/
-│ └── App.js
+├── visualisation/
+│ ├── marketplace_visualiser.css
+│ ├── marketplace_visualiser.html
+│ └── marketplace_visualiser.js
 ├── node_modules/
 ├── contract_addresses.json
 ├── package.json
+├── visualise.py
 └── README.md
 ```
 ---
